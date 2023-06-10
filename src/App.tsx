@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Navbar } from "./Components/Navbar/Navbar";
+import { HomePage } from "./Pages/HomePage/HomePage";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AboutPage } from "./Pages/AboutPage/AboutPage";
+import { Suspense } from "react";
+import { Loader } from "./Components/loader/loader";
+import { Error404 } from "./Components/error/error";
+import { ResumePage } from "./Pages/resumePage/resumePage";
+import { ProjectsPage } from "./Pages/projectsPage/projectsPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className="App">
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Navigate to={"/home"} />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </>
   );
 }
 
