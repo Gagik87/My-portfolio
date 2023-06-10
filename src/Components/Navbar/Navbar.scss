@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+nav {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 22;
+}
+
+.menuBar,
+.menuClose {
+  display: none;
+}
+
+.menuClose .menu {
+  width: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hide_close {
+  width: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.close {
+  width: 30px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.navBarWrapper {
+  margin: 0 auto;
+  max-width: 1140px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NavbarLogo span {
+  font-size: 25px;
+  font-weight: 600;
+  cursor: default;
+  padding-left: 20px;
+}
+
+.NavBarItems a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 40px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.NavBarItems a:hover {
+  text-decoration: underline;
+}
+
+.NavBarItems .active {
+  text-decoration: underline;
+}
+
+.hide_menu,
+.hide_close {
+  display: none;
+}
+
+.closeMenu a {
+  display: none;
+}
+
+@media only screen and (max-width: 760px) {
+  .NavBarItems a {
+    margin: 0 25px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .NavBarItems {
+    display: none;
+  }
+  .menuBar,
+  .menuClose {
+    display: block;
+  }
+  .menuBar {
+    position: fixed;
+    top: 69.8px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000e5;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9px 0;
+    transition: all 0.4s ease;
+  }
+  .menuBar a {
+    font-size: 25px;
+    display: block;
+    margin: 20px 0;
+  }
+  .closeMenu {
+    transform: translateY(-230px);
+  }
+  .closeMenu a {
+    display: none;
+  }
+}
